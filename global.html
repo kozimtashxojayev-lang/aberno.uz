@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global rejalar — Aberno</title>
+  <meta name="description" content="Aberno kelajak rejalari: jahon bozorida yetakchilik va 10 dan ortiq davlatda filiallar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Aberno bosh sahifa">
+        <span class="logo__mark"><span></span></span>
+        ABERNO
+      </a>
+      <nav class="nav" aria-label="Asosiy menyu">
+        <a href="index.html">Bosh sahifa</a>
+        <a href="about.html">Biz haqimizda</a>
+        <a href="products.html">Mahsulotlar</a>
+        <a href="global.html">Global rejalar</a>
+        <a href="contact.html">Aloqa</a>
+        <a href="contact.html" class="btn btn--gold">Hamkor bo'lish</a>
+      </nav>
+      <button class="burger" aria-label="Menyuni ochish" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Bosh sahifa</a><span>/</span><span>Global rejalar</span></div>
+        <h1>Maqsadimiz — jahon bozorida yetakchilik</h1>
+        <p class="lead">Yaqin kelajakda Aberno 10 dan ortiq davlatda o'z filiallarini ochishni va xalqaro miqyosda tanilgan brendga aylanishni rejalashtirgan.</p>
+      </div>
+    </section>
+
+    <!-- ===== Xarita ===== -->
+    <section class="section section--navy">
+      <div class="container globe-wrap">
+        <div class="world reveal" aria-label="Aberno filiallari rejasi xaritasi" role="img">
+          <svg viewBox="0 0 600 320">
+            <defs>
+              <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1" fill="#ffffff" opacity=".08"/>
+              </pattern>
+            </defs>
+            <rect width="600" height="320" fill="url(#dots)"/>
+
+            <!-- Qit'alar (soddalashtirilgan) -->
+            <g fill="#ffffff" opacity=".08">
+              <path d="M60 60 Q120 30 190 60 Q200 110 150 140 Q120 150 100 130 Q70 110 60 60Z"/>
+              <path d="M160 170 Q200 165 205 200 Q195 260 170 290 Q155 250 150 210Z"/>
+              <path d="M280 60 Q320 45 350 60 Q345 90 320 100 Q290 100 280 80Z"/>
+              <path d="M290 120 Q340 110 360 140 Q360 200 330 250 Q305 240 295 190 Q280 150 290 120Z"/>
+              <path d="M350 50 Q450 30 540 70 Q550 120 500 150 Q440 160 400 140 Q360 120 350 90Z"/>
+              <path d="M490 210 Q530 200 550 220 Q545 250 510 250 Q485 240 490 210Z"/>
+            </g>
+
+            <!-- Yo'nalishlar -->
+            <g class="route">
+              <path d="M405 100 Q395 70 385 82"/>
+              <path d="M405 100 Q417 72 430 88"/>
+              <path d="M405 100 Q388 88 372 118"/>
+              <path d="M405 100 Q377 75 350 100"/>
+              <path d="M405 100 Q360 50 315 72"/>
+              <path d="M405 100 Q370 62 335 85"/>
+              <path d="M405 100 Q425 92 445 130"/>
+              <path d="M405 100 Q452 62 500 100"/>
+              <path d="M405 100 Q437 55 470 70"/>
+              <path d="M405 100 Q375 120 330 170"/>
+              <path d="M405 100 Q347 45 290 80"/>
+            </g>
+
+            <!-- Filial nuqtalari -->
+            <g>
+              <circle class="pin-ring" cx="385" cy="82" r="4"/><circle class="pin" cx="385" cy="82" r="4"/>
+              <circle class="pin-ring" cx="430" cy="88" r="4"/><circle class="pin" cx="430" cy="88" r="4"/>
+              <circle class="pin-ring" cx="372" cy="118" r="4"/><circle class="pin" cx="372" cy="118" r="4"/>
+              <circle class="pin-ring" cx="350" cy="100" r="4"/><circle class="pin" cx="350" cy="100" r="4"/>
+              <circle class="pin-ring" cx="315" cy="72" r="4"/><circle class="pin" cx="315" cy="72" r="4"/>
+              <circle class="pin-ring" cx="335" cy="85" r="4"/><circle class="pin" cx="335" cy="85" r="4"/>
+              <circle class="pin-ring" cx="445" cy="130" r="4"/><circle class="pin" cx="445" cy="130" r="4"/>
+              <circle class="pin-ring" cx="500" cy="100" r="4"/><circle class="pin" cx="500" cy="100" r="4"/>
+              <circle class="pin-ring" cx="470" cy="70" r="4"/><circle class="pin" cx="470" cy="70" r="4"/>
+              <circle class="pin-ring" cx="330" cy="170" r="4"/><circle class="pin" cx="330" cy="170" r="4"/>
+              <circle class="pin-ring" cx="290" cy="80" r="4"/><circle class="pin" cx="290" cy="80" r="4"/>
+            </g>
+
+            <!-- Bosh ofis -->
+            <circle cx="405" cy="100" r="11" fill="#f4b43a" opacity=".3"/>
+            <circle class="pin-home" cx="405" cy="100" r="6"/>
+            <text x="405" y="86" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11" font-weight="700" fill="#ffffff">O'zbekiston</text>
+          </svg>
+        </div>
+
+        <div class="reveal">
+          <span class="eyebrow">Filiallar tarmog'i</span>
+          <h2>10+ davlatda Aberno filiallari</h2>
+          <p class="lead">Bosh ofis va ishlab chiqarish O'zbekistonda. Keyingi qadam — mintaqaviy va xalqaro bozorlarda o'z vakolatxona va filiallarimizni ochish.</p>
+
+          <div class="regions">
+            <div class="region"><strong>Markaziy Osiyo</strong><span>Qo'shni bozorlar</span></div>
+            <div class="region"><strong>MDH davlatlari</strong><span>Yirik iste'mol bozorlari</span></div>
+            <div class="region"><strong>Yaqin Sharq</strong><span>Eksport yo'nalishi</span></div>
+            <div class="region"><strong>Yevropa</strong><span>Sifat standartlari bozori</span></div>
+            <div class="region"><strong>Janubiy Osiyo</strong><span>O'sib borayotgan talab</span></div>
+            <div class="region"><strong>Afrika</strong><span>Istiqbolli bozorlar</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Yo'l xaritasi ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Yo'l xaritasi</span>
+          <h2>Jahon yetakchiligiga to'rt qadam</h2>
+          <p class="lead">Har bir bosqich oldingisining mustahkam poydevoriga quriladi.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="step step--done reveal">
+            <div class="step__num">01</div>
+            <span class="step__label">Mustahkamlash</span>
+            <h3>Ichki bozorda yetakchilik</h3>
+            <p>O'zbekiston bo'ylab distribyutsiya va brend tanilishini oshirish.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step__num">02</div>
+            <span class="step__label">Eksport</span>
+            <h3>Mintaqaviy eksport</h3>
+            <p>Qo'shni davlatlarga muntazam eksport va hamkorlar tarmog'ini yaratish.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step__num">03</div>
+            <span class="step__label">Filiallar</span>
+            <h3>10+ davlatda filial</h3>
+            <p>Xorijda vakolatxona, ombor va savdo filiallarini ochish.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step__num">04</div>
+            <span class="step__label">Yetakchilik</span>
+            <h3>Jahon bozorida yetakchi o'rin</h3>
+            <p>Margarin va salfetka sohasida xalqaro tan olingan brendga aylanish.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Strategiya ustunlari ===== -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Strategiya</span>
+          <h2>O'sishimizning asosiy ustunlari</h2>
+        </div>
+
+        <div class="cards cards--4">
+          <div class="card reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </div>
+            <h3>Xalqaro standartlar</h3>
+            <p>Mahsulot va jarayonlarni xalqaro sifat talablariga moslashtirish.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card__icon card__icon--sky">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+            </div>
+            <h3>Quvvatlarni oshirish</h3>
+            <p>Ishlab chiqarishni kengaytirish va yangi liniyalarni ishga tushirish.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Hamkorlar tarmog'i</h3>
+            <p>Har bir davlatda ishonchli distribyutor va hamkorlar bilan ishlash.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card__icon card__icon--sky">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <h3>Logistika</h3>
+            <p>Xalqaro yetkazib berish va mintaqaviy omborlar tizimini qurish.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <div>
+            <h2>O'z davlatingizda Aberno vakili bo'ling</h2>
+            <p>Xalqaro distribyutorlar va investorlar bilan hamkorlikka ochiqmiz. Takliflaringizni kutamiz.</p>
+          </div>
+          <a href="contact.html" class="btn btn--navy">
+            Taklif yuborish
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="logo"><span class="logo__mark"><span></span></span>ABERNO</a>
+          <p>Margarin va salfetka mahsulotlari ishlab chiqaruvchisi. Maqsadimiz — jahon bozorida yetakchilik.</p>
+        </div>
+        <div>
+          <h4>Sahifalar</h4>
+          <ul>
+            <li><a href="about.html">Biz haqimizda</a></li>
+            <li><a href="products.html">Mahsulotlar</a></li>
+            <li><a href="global.html">Global rejalar</a></li>
+            <li><a href="contact.html">Aloqa</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Mahsulotlar</h4>
+          <ul>
+            <li><a href="products.html#margarin">Margarin</a></li>
+            <li><a href="products.html#salfetka">Salfetka</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Aloqa</h4>
+          <ul>
+            <li><a href="tel:+998000000000">+998 (00) 000-00-00</a></li>
+            <li><a href="mailto:info@aberno.uz">info@aberno.uz</a></li>
+            <li>Toshkent, O'zbekiston</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year></span> Aberno. Barcha huquqlar himoyalangan.</span>
+        <span>aberno.uz</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
