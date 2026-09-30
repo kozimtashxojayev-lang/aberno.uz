@@ -16,6 +16,14 @@
   --muted: #5b6676;
   --line: #e6e1d6;
 
+  /* Mavzuga bog'liq tokenlar */
+  --bg: var(--cream);
+  --surface: var(--white);
+  --heading: var(--navy);
+  --header-bg: rgba(251, 247, 239, 0.92);
+  --hover: rgba(14, 42, 71, 0.05);
+  --navy-ui: var(--navy);
+
   --radius: 18px;
   --radius-sm: 10px;
   --shadow: 0 10px 30px rgba(14, 42, 71, 0.08);
@@ -23,6 +31,48 @@
   --container: 1180px;
   --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-head: "Unbounded", "Manrope", system-ui, sans-serif;
+
+  color-scheme: light;
+}
+
+/* Qorong'u mavzu: tizim sozlamasi bo'yicha (agar foydalanuvchi yorug'ni tanlamagan bo'lsa) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --gold-soft: #3a2e14;
+    --sky: #142f4b;
+    --sky-dark: #6aa5e0;
+    --text: #d3dce6;
+    --muted: #95a5b8;
+    --line: #26394f;
+    --bg: #0b1622;
+    --surface: #132338;
+    --heading: #eef3f8;
+    --header-bg: rgba(11, 22, 34, 0.9);
+    --hover: rgba(255, 255, 255, 0.06);
+    --navy-ui: #235487;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.45);
+    color-scheme: dark;
+  }
+}
+
+/* Qorong'u mavzu: foydalanuvchi tugma orqali tanlaganda */
+:root[data-theme="dark"] {
+  --gold-soft: #3a2e14;
+  --sky: #142f4b;
+  --sky-dark: #6aa5e0;
+  --text: #d3dce6;
+  --muted: #95a5b8;
+  --line: #26394f;
+  --bg: #0b1622;
+  --surface: #132338;
+  --heading: #eef3f8;
+  --header-bg: rgba(11, 22, 34, 0.9);
+  --hover: rgba(255, 255, 255, 0.06);
+  --navy-ui: #235487;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
 }
 
 *,
@@ -41,7 +91,7 @@ body {
   font-size: 16px;
   line-height: 1.65;
   color: var(--text);
-  background: var(--cream);
+  background: var(--bg);
   overflow-x: hidden;
 }
 
@@ -63,7 +113,7 @@ h4 {
   font-family: var(--font-head);
   line-height: 1.2;
   margin: 0 0 0.6em;
-  color: var(--navy);
+  color: var(--heading);
   font-weight: 600;
 }
 
@@ -86,7 +136,7 @@ p {
   padding: 96px 0;
 }
 
-.section--white { background: var(--white); }
+.section--white { background: var(--surface); }
 .section--navy { background: var(--navy); color: #d7e2ee; }
 .section--navy h2,
 .section--navy h3 { color: var(--white); }
@@ -148,10 +198,10 @@ p {
 
 .btn--outline {
   border-color: currentColor;
-  color: var(--navy);
+  color: var(--heading);
 }
 
-.btn--outline:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+.btn--outline:hover { background: var(--heading); color: var(--bg); border-color: var(--heading); }
 
 .btn--light {
   border-color: rgba(255, 255, 255, 0.5);
@@ -167,7 +217,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(251, 247, 239, 0.92);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: box-shadow 0.3s;
@@ -190,7 +240,7 @@ p {
   font-family: var(--font-head);
   font-weight: 700;
   font-size: 1.35rem;
-  color: var(--navy);
+  color: var(--heading);
   letter-spacing: 0.02em;
 }
 
@@ -198,7 +248,7 @@ p {
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background: var(--navy);
+  background: var(--navy-ui);
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -227,11 +277,45 @@ p {
   transition: color 0.2s, background 0.2s;
 }
 
-.nav a:hover { color: var(--navy); background: rgba(14, 42, 71, 0.05); }
-.nav a.is-active { color: var(--navy); background: var(--gold-soft); }
+.nav a:hover { color: var(--heading); background: var(--hover); }
+.nav a.is-active { color: var(--heading); background: var(--gold-soft); }
 
 .nav .btn { margin-left: 10px; padding: 10px 20px; color: var(--navy); }
 .nav .btn:hover { background: var(--gold-dark); }
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: var(--surface);
+  color: var(--heading);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s, transform 0.3s;
+}
+
+.theme-toggle:hover { border-color: var(--gold); }
+.theme-toggle:active { transform: scale(0.92); }
+.theme-toggle svg { width: 20px; height: 20px; }
+
+/* Yorug' rejimda oy, qorong'u rejimda quyosh ko'rsatiladi */
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+}
 
 .burger {
   display: none;
@@ -246,7 +330,7 @@ p {
 .burger span {
   display: block;
   height: 2px;
-  background: var(--navy);
+  background: var(--heading);
   margin: 5px 0;
   border-radius: 2px;
   transition: transform 0.3s, opacity 0.3s;
@@ -270,7 +354,7 @@ p {
   height: 620px;
   right: -180px;
   top: -140px;
-  background: radial-gradient(circle, var(--gold-soft) 0%, rgba(253, 239, 207, 0) 70%);
+  background: radial-gradient(circle, var(--gold-soft) 0%, transparent 70%);
   z-index: -1;
 }
 
@@ -324,7 +408,7 @@ p {
 
 .hero__badge {
   position: absolute;
-  background: var(--white);
+  background: var(--surface);
   border-radius: 14px;
   padding: 12px 16px;
   box-shadow: var(--shadow-lg);
@@ -335,7 +419,7 @@ p {
   gap: 10px;
 }
 
-.hero__badge strong { display: block; color: var(--navy); font-size: 1rem; }
+.hero__badge strong { display: block; color: var(--heading); font-size: 1rem; }
 .hero__badge--1 { left: -4%; top: 16%; }
 .hero__badge--2 { right: -2%; bottom: 8%; }
 
@@ -405,7 +489,7 @@ p {
 }
 
 .stat {
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
   padding: 28px 24px;
   box-shadow: var(--shadow);
@@ -415,7 +499,7 @@ p {
   font-family: var(--font-head);
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--heading);
   line-height: 1;
   margin-bottom: 8px;
 }
@@ -447,7 +531,7 @@ p {
 
 .direction__link {
   font-weight: 700;
-  color: var(--navy);
+  color: var(--heading);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -472,7 +556,7 @@ p {
 .cards--4 { grid-template-columns: repeat(4, 1fr); }
 
 .card {
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
   padding: 32px 28px;
   box-shadow: var(--shadow);
@@ -495,7 +579,7 @@ p {
 
 .card__icon svg { width: 28px; height: 28px; }
 .card__icon--sky { background: var(--sky); color: var(--sky-dark); }
-.card__icon--navy { background: var(--navy); color: var(--gold); }
+.card__icon--navy { background: var(--navy-ui); color: var(--gold); }
 
 .section--navy .card {
   background: var(--navy-2);
@@ -515,7 +599,7 @@ p {
 
 .filter {
   border: 2px solid var(--line);
-  background: var(--white);
+  background: var(--surface);
   padding: 10px 22px;
   border-radius: 999px;
   font-family: inherit;
@@ -526,8 +610,8 @@ p {
   transition: all 0.2s;
 }
 
-.filter:hover { border-color: var(--navy); color: var(--navy); }
-.filter.is-active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.filter:hover { border-color: var(--heading); color: var(--heading); }
+.filter.is-active { background: var(--navy-ui); border-color: var(--navy-ui); color: var(--white); }
 
 .products {
   display: grid;
@@ -536,7 +620,7 @@ p {
 }
 
 .product {
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -596,10 +680,10 @@ p {
 .product__specs li {
   font-size: 0.8rem;
   font-weight: 600;
-  background: var(--cream);
+  background: var(--bg);
   padding: 4px 10px;
   border-radius: 6px;
-  color: var(--navy);
+  color: var(--heading);
 }
 
 /* ---------- Ikki ustunli matn + rasm ---------- */
@@ -675,7 +759,7 @@ p {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--navy);
+  background: var(--navy-ui);
   color: var(--gold);
   font-family: var(--font-head);
   font-weight: 700;
@@ -683,10 +767,10 @@ p {
   place-items: center;
   margin-bottom: 22px;
   position: relative;
-  box-shadow: 0 0 0 8px var(--cream);
+  box-shadow: 0 0 0 8px var(--bg);
 }
 
-.section--white .step__num { box-shadow: 0 0 0 8px var(--white); }
+.section--white .step__num { box-shadow: 0 0 0 8px var(--surface); }
 .step--done .step__num { background: var(--gold); color: var(--navy); }
 .step p { color: var(--muted); font-size: 0.95rem; }
 
@@ -816,7 +900,7 @@ p {
   top: -140px;
 }
 
-.cta h2 { margin: 0 0 8px; }
+.cta h2 { margin: 0 0 8px; color: var(--navy); }
 .cta p { margin: 0; color: rgba(14, 42, 71, 0.75); max-width: 520px; }
 .cta .btn { position: relative; z-index: 1; flex-shrink: 0; }
 
@@ -840,7 +924,7 @@ p {
   display: flex;
   gap: 16px;
   align-items: flex-start;
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
   padding: 22px;
   box-shadow: var(--shadow);
@@ -850,7 +934,7 @@ p {
 .contact-item p { margin: 0; color: var(--muted); }
 
 .form {
-  background: var(--white);
+  background: var(--surface);
   border-radius: 24px;
   padding: 40px;
   box-shadow: var(--shadow);
@@ -872,7 +956,7 @@ p {
 .field label {
   font-weight: 700;
   font-size: 0.9rem;
-  color: var(--navy);
+  color: var(--heading);
 }
 
 .field input,
@@ -883,7 +967,7 @@ p {
   padding: 13px 16px;
   border-radius: var(--radius-sm);
   border: 2px solid var(--line);
-  background: var(--cream);
+  background: var(--bg);
   color: var(--text);
   transition: border-color 0.2s, background 0.2s;
   width: 100%;
@@ -896,7 +980,7 @@ p {
 .field textarea:focus {
   outline: none;
   border-color: var(--gold);
-  background: var(--white);
+  background: var(--surface);
 }
 
 .field.has-error input,
@@ -943,7 +1027,7 @@ p {
 
 .map-box__pin {
   position: relative;
-  background: var(--white);
+  background: var(--surface);
   padding: 14px 20px;
   border-radius: 14px;
   box-shadow: var(--shadow-lg);
@@ -951,7 +1035,7 @@ p {
   align-items: center;
   gap: 12px;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--heading);
 }
 
 /* ---------- Footer ---------- */
@@ -1034,7 +1118,7 @@ p {
   .nav {
     position: fixed;
     inset: 76px 0 auto 0;
-    background: var(--cream);
+    background: var(--bg);
     flex-direction: column;
     align-items: stretch;
     padding: 16px 20px 28px;

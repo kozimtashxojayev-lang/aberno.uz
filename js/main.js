@@ -3,6 +3,7 @@
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+  initThemeToggle();
   initHeader();
   initMobileMenu();
   initActiveLink();
@@ -13,6 +14,37 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactForm();
   setYear();
 });
+
+/* Yorug' / qorong'u mavzu almashtirgich.
+   Boshlang'ich mavzu <head> dagi kichik skriptda qo'yiladi (sahifa miltillamasligi uchun). */
+function initThemeToggle() {
+  const btn = document.querySelector(".theme-toggle");
+  if (!btn) return;
+
+  const root = document.documentElement;
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+  const current = () => root.dataset.theme || (media.matches ? "dark" : "light");
+
+  const updateLabel = () => {
+    const label = current() === "dark" ? "Yorug' rejimga o'tish" : "Qorong'u rejimga o'tish";
+    btn.setAttribute("aria-label", label);
+    btn.setAttribute("title", label);
+  };
+
+  btn.addEventListener("click", () => {
+    const next = current() === "dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    try {
+      localStorage.setItem("aberno-theme", next);
+    } catch (e) {
+      /* saqlash imkoni bo'lmasa, mavzu faqat shu sahifada qoladi */
+    }
+    updateLabel();
+  });
+
+  media.addEventListener("change", updateLabel);
+  updateLabel();
+}
 
 /* Header scroll bo'lganda soya oladi */
 function initHeader() {
